@@ -3,9 +3,10 @@ import CoreData
 
 import SwiftUI
 
-struct ContentView: View  {
+struct CharacterView: View  {
     
     @Environment(\.managedObjectContext) var managedObjectContext
+    
     @FetchRequest(entity: Character.entity(), sortDescriptors: []) var characters: FetchedResults<Character>
     
     @State private var showAddScreen = false
@@ -27,7 +28,8 @@ struct ContentView: View  {
                     .foregroundStyle(Color.primary)
                 }
                 .onDelete(perform: deleteCharacter)
-            }.navigationTitle("Guildassssssss teste")
+            }
+            .navigationTitle("<Nome da Guilda>")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
@@ -62,5 +64,5 @@ struct ContentView: View  {
 }
 
 #Preview {
-    ContentView()
+    CharacterView()
 }
