@@ -6,7 +6,7 @@ struct CoreDataCharacterApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CharacterView()
                 .environment(\.managedObjectContext, storeCoordinator.container.viewContext)
         }
     }
